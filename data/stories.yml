@@ -1,0 +1,362 @@
+version: "2.0"
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: user says goodbye and wants to give feedback
+  steps: 
+  - intent: goodbye
+  - action: utter_ask_survey
+  - intent: affirm
+  - action: utter_survey
+  - action: utter_goodbye
+
+- story: user says goodbye and doesn't want to give feedback
+  steps: 
+  - intent: goodbye
+  - action: utter_ask_survey
+  - intent: deny
+  - action: utter_goodbye
+
+- story: the user is an editor
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: iamaneditor
+  - action: utter_editors
+
+- story: the user is an author
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: iamanauthor
+  - action: utter_authors
+
+- story: the user is a reader
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: iamareader
+  - action: utter_readers
+
+- story: an author ask if they can suggest the reviewers for a manuscript
+  steps:
+  - intent: suggest_reviewers
+  - action: utter_suggestreview
+  
+- story: the user presses start
+  steps:
+  - intent: start
+  - action: utter_greet
+
+- story: the user says stop
+  steps: 
+  - intent: stop
+  - action: utter_ask_survey
+  - intent: affirm
+  - action: utter_survey
+  - action: utter_goodbye
+
+- story: the user says stop
+  steps: 
+  - intent: stop
+  - action: utter_ask_survey
+  - intent: deny
+  - action: utter_goodbye
+  
+- story: a user asks about the assistant's name
+  steps: 
+  - intent: ask_bot_name
+  - action: utter_botname  
+
+- story: a user asks for the list of reviewers
+  steps: 
+  - intent: list_of_reviewers
+  - action: utter_list_reviewers
+
+- story: a user ask about the editorial team
+  steps:
+  - intent: editorial_team
+  - action: utter_editorial_team
+
+- story: the user asks about the geographical scope of the journal
+  steps:
+  - intent: geographical_scope
+  - action: utter_geo_scope
+  
+- story: the user wants to speak to a person
+  steps:
+  - intent: want_to_speak_with_a_person
+  - action: utter_speak_to_a_person
+  - intent: affirm
+  - action: utter_contact
+
+- story: the user doesn't want to speak to a person
+  steps: 
+  - intent: want_to_speak_with_a_person
+  - action: utter_speak_to_a_person
+  - intent: deny
+  - action: utter_whatdouwant_todo_next
+
+- story: the user asks if they are speaking to a bot
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: an author asks how to submit an article
+  steps:
+  - intent: ask_submit_article
+  - action: utter_ask_submit_article
+
+- story: an author asks how to submit an article and asks for the Submission Checkoff list
+  steps:
+  - intent: ask_submit_article
+  - action: utter_ask_submit_article
+  - intent: ask_checkoff_list
+  - action: utter_checkoff_list
+
+- story: an author has a question about Orcid ID
+  steps: 
+  - intent: ask_orcid_id
+  - action: utter_orcid_id
+
+- story: a user asks about if the journal is free
+  steps: 
+  - intent: ask_cost
+  - action: utter_ask_cost
+
+- story: an author asks about the author's guidelines
+  steps: 
+  - intent: ask_author_guidelines
+  - action: utter_author_guidelines
+
+- story: an author asks about the language the journal publishes in 
+  steps: 
+  - intent: ask_language
+  - action: utter_ask_language
+
+- story: an author asks if he can have language support
+  steps: 
+  - intent: ask_language_correction
+  - action: utter_ask_language_correction
+
+- story: an author that has submitted a paper asks if their manuscript is of interest
+  steps: 
+  - intent: ask_manuscript_of_interest
+  - action: utter_manuscript_of_interest
+
+- story: a user asks about the frequency of publication
+  steps: 
+  - intent: ask_frequency_of_publication
+  - action: utter_frequency_of_publication
+
+- story: the user tells the assistant that it is not helpful
+  steps: 
+  - intent: not_helping
+  - action: utter_not_help
+
+- story: the user tells the assistant that it is not helpful, the assistant asks if thew waht to speak to a person deny
+  steps: 
+  - intent: not_helping
+  - action: utter_not_help
+  - intent: deny
+  - action: utter_speak_to_a_person
+  - intent: deny
+  - action: utter_whatdouwant_todo_next
+
+- story: the user tells the assistant that it is not helpful affirm
+  steps: 
+  - intent: not_helping
+  - action: utter_not_help
+  - intent: deny
+  - action: utter_speak_to_a_person
+  - intent: affirm
+  - action: utter_contact
+
+- story: a user asks about social media
+  steps: 
+  - intent: ask_social_media
+  - action: utter_social_media 
+
+- story: a user asks what is the blind review
+  steps:
+  - intent: ask_blind_review
+  - action: utter_blind_review
+
+- story: the user ask about something but the assistant doesn't understand what they are refering to
+  steps:
+  - intent: what_is_that
+  - action: utter_whatisthat
+
+- story: an author wants to know what they need to check off before they send an article
+  steps:
+  - intent: ask_checkoff_list
+  - action: utter_checkoff_list
+
+- story: a user ask about the antiplagiarism policy
+  steps:
+  - intent: ask_antiplagiarism_policy
+  - action: utter_antiplagiarism_policy
+
+- story: a user asks how is the revision process like
+  steps:
+  - intent: ask_revision_process
+  - action: utter_revision_process
+
+- story: a user asks about the metrics of the journal
+  steps:
+  - intent: ask_metrics_mbot
+  - action: utter_metrics_mbot
+
+- story: an author wants to know if they need to register
+  steps:
+  - intent: ask_register
+  - action: utter_are_you_an_author 
+  - intent: affirm
+  - action: utter_ask_register_authors
+
+- story: a user who is not an author need to know if they need to register
+  steps:
+  - intent: ask_register
+  - action: utter_are_you_an_author
+  - intent: deny
+  - action: utter_are_you_a_reader
+  - intent: affirm
+  - action: utter_ask_register_reader
+
+- story: a user wants to know if they need to register
+  steps:
+  - intent: ask_register
+  - action: utter_are_you_a_reader 
+  - intent: affirm
+  - action: utter_ask_register_reader
+
+- story: a user needs to know if they need to register
+  steps:
+  - intent: ask_register
+  - action: utter_are_you_a_reader
+  - intent: deny
+  - action: utter_are_you_an_author
+  - intent: affirm
+  - action: utter_ask_register_authors
+
+- story: the user says okay, cool or stuff like that
+  steps:
+  - intent: chitchat
+  - action: utter_what_else
+  - intent: affirm
+  - action: utter_ask_me
+
+- story: the user says okay, cool or stuff like that
+  steps:
+  - intent: chitchat
+  - action: utter_what_else
+  - intent: deny
+  - action: utter_ask_survey
+  - intent: affirm
+  - action: utter_survey
+  - action: utter_goodbye
+
+- story: the user says okay, cool or stuff like that
+  steps:
+  - intent: chitchat
+  - action: utter_what_else
+  - intent: deny
+  - action: utter_ask_survey
+  - intent: deny
+  - action: utter_goodbye
+
+- story: A user asks for Mediterranean Botany's address
+  steps:
+  - intent: ask_address
+  - action: utter_address
+
+- story: A user asks about the journal's email address
+  steps: 
+  - intent: ask_email
+  - action: utter_email
+
+- story: A user asks about the journal's phone number
+  steps:
+  - intent: ask_phone
+  - action: utter_phone
+
+- story: an author wants to know when their article is going to be published
+  steps:
+  - intent: how_long_until_publish
+  - action: utter_how_long_until_publish
+        
+- story: an editor has been assigned a job and wants to know what does they have to do next
+  steps:
+  - intent: assigned_as_editor
+  - action: utter_assigned_as_editor
+
+- story: an editor has sent a paper for review and wants to know what are the next steps
+  steps:
+  - intent: editor_send_to_review
+  - action: utter_editor_send_to_review
+
+- story: A user wants to know about Mediterranean Botany's publishing license
+  steps:
+  - intent: ask_copyrights
+  - action: utter_ask_copyrights
+       
+- story: a user thanks the chatbot
+  steps:
+  - intent: thankyou
+  - action: utter_thankyou
+       
+- story: a user ask something that is out of scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: a user speaks in another language or asks about language availability
+  steps: 
+  - intent: ask_assistant_languages
+  - action: utter_assistant_language
+
+- story: the user types help
+  steps: 
+  - intent: help
+  - action: utter_help  
+
+- story: the user says nice to meet u 
+  steps: 
+  - intent: nice2meetu
+  - action: utter_nice2meet
+  - action: utter_whatcanido
+                     
+- story: the user asks about the latest articles
+  steps: 
+  - intent: latest_articles         
+  - action: utter_latest_articles
+
+- story: the user asks what the journal is about
+  steps:
+  - intent: ask_mbot
+  - action: utter_mbot
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_whatdouwant_todo_next

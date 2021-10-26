@@ -1,0 +1,356 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- ask_register
+- affirm
+- out_of_scope
+- want_to_speak_with_a_person
+- ask_antiplagiarism_policy
+- assigned_as_editor
+- editor_send_to_review
+- ask_metrics_mbot
+- ask_copyrights
+- how_long_until_publish
+- ask_social_media
+- ask_revision_process
+- greet
+- stop
+- help
+- goodbye
+- bot_challenge
+- deny
+- mood_great
+- mood_unhappy
+- ask_submit_article
+- ask_orcid_id
+- ask_cost
+- ask_author_guidelines
+- ask_language
+- ask_language_correction
+- ask_manuscript_of_interest
+- ask_frequency_of_publication
+- ask_checkoff_list
+- thankyou
+- ask_address
+- ask_email
+- ask_phone
+- chitchat
+- ask_blind_review
+- what_is_that
+- not_helping
+- ask_bot_name
+- ask_assistant_languages
+- nice2meetu
+- start
+- latest_articles
+- ask_mbot
+- iamaneditor
+- iamanauthor
+- iamareader
+- suggest_reviewers
+- list_of_reviewers
+- editorial_team
+- geographical_scope
+responses:
+  utter_greet:
+  - text: Hello, I'm MBot. How can I help you today?
+    buttons: 
+    - title: "Editors"
+      payload: "/iamaneditor"
+    - title: "Authors"
+      payload: "/iamanauthor"
+    - title: "Readers"
+      payload: "/iamareader"
+  utter_editors:
+  - text: |-
+      If you are an editor, you can ask me the following questions:
+      ▫️ How to proceed when you have been assigned as an editor for a paper
+      ▫️ What to do after you have sent the  article to the reviewers
+  utter_authors:  
+  - text: |-
+      If your'e an author, you can ask me about: 
+      ▫️ The registration process
+      ▫️ If authors can suggest the reviewers for their manuscripts
+      ▫️ How to submit an article
+      ▫️ The Authors’ Guidelines
+      ▫️ About the Orcid ID
+      ▫️ About the Submission Preparation Checklist (Instructions for the preparation of the submission)
+      ▫️ Average time for publication 
+      ▫️ The language the manuscripts need to be written in
+      ▫️ The list of reviewers
+      ▫️ About our Editorial Team
+      ▫️ About language support (language correction)
+      ▫️ Our impact factor (the journal’s metrics)
+      ▫️ The license we publish our articles under (Open-Access Policy)
+      ▫️ What kinds of articles we publish (Articles of interest)
+      ▫️ The journal’s cost
+      ▫️ The journal's geographical scope
+  utter_readers:
+  - text: |-
+      Our readers can ask me about:
+      ▫️ Where to read the latest articles
+      ▫️ The journal’s cost
+      ▫️ Our impact factor
+      ▫️ The license we use for our articles 
+      ▫️ The registration process
+      ▫️ About Mediterranean Botany
+      ▫️ About our Editorial Team
+  utter_happy:
+  - text: Great, carry on!
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Was that helpful?
+  utter_goodbye:
+  - text: Goodbye. 
+  - text: Bye bye.
+  - text: See you soon.
+  - text: Bye, I hope we can speak again soon.
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.🤖
+  utter_suggestreview:
+  - text: You can suggest the list of potential reviewers for your manuscript during the submission process.
+  utter_ask_submit_article:
+  - text: |-
+      In order to submit an article for publishing you should first go to our journal's website and register. You can register following this link https://revistas.ucm.es/index.php/MBOT/user/register. 
+      After you have registered we recommend that you take a look at the instructions for the submission here: https://revistas.ucm.es/index.php/MBOT/about/submissions.
+      We also recommend that you look for the Submission Preparation Checklist and make sure your paper fulfills all of these criteria. Your submission may be returned if you do not adhere to these guidelines.
+  utter_orcid_id:
+  - text: Although submitting your Orcid iD is not obligatory, we recommend that you include in your article. When your article is published your Orcid iD will be visible in the PDF document.
+  utter_ask_cost:
+  - text: Mediterranean Botany is an Open Access journal, this means it is free of charge for both authors and readers. We do not charge authors for article processing or publication. All content that we publish is freely available.
+  utter_author_guidelines:
+  - text: You can read our author's guidelines here https://revistas.ucm.es/index.php/MBOT/about/submissions. 
+  utter_ask_language:
+  - text: 'Mediterranean Botany publishes only contributions written in English, manuscripts that do not comply with the language requisites will not be published. '
+  utter_ask_language_correction:
+  - text: |-
+      Mediterranean Botany does not provide language support. The authors need to ensure the English they used in their manuscripts is understandable. If you think that you need help with writing in English you should consider: 
+      ▫️ Asking a colleague whose native language is English, or a colleague with high proficiency in English to review your manuscript before sending it 
+      ▫️ Using a professional language editing service. 
+      If your manuscript is accepted it will be checked by our copy editors for spelling and formal style before publication.
+  utter_manuscript_of_interest:
+  - text: Our journal publishes original scientific works dealing with Botany, including Biogeography, Ecology, Ethnobotany, Flora, Conservation Biology, Plant Taxonomy, Systematics and Vegetation all within the geographical scope on the Mediterranean biomes around the world. Research on other bioclimatic regions or biomes is only accepted when addressing questions with interest to the geographic scope of the journal (e.g. evolutionary lineages related to current plant diversity in Mediterranean biomes) or in the context of special issues focused on wide topics of plant sciences.
+  utter_social_media:
+  - text: |-
+       Mediterranean Botany is currently on Facebook, Twitter and Instagram. You can find us by searching Mediterranean Botany or typing @medbotany in the search bar. You can use the following links to connect with us on social media: 
+       Twitter: https://twitter.com/MedBotany
+       Facebook: https://www.facebook.com/medbotany
+       Instagram: https://www.instagram.com/medbotany
+  utter_frequency_of_publication:
+  - text: Mediterranean Botany publishes one volume per year. Currently, the publication is continuous, 2 or 3 articles are released each month.
+  utter_checkoff_list:
+  - text: |-
+      Before you submit an article for publishing, we recommend that first you use the following checklist to make sure that everything is in order:
+       ☑️ The article has never been published before, nor has it been submitted to another journal (or an explanation has been provided in Comments to the Editor). 
+       ☑️ The format of the file sent is OpenOffice, Microsoft Word or RTF.
+       ☑️ Web addresses have been included for references whenever possible.
+       ☑️ The text meets the reference and style requirements described in the Author Guidelines, which may be found in About the Journal https://revistas.ucm.es/index.php/MBOT/about.
+       ☑️ If you are submitting something for a peer-reviewed section of the journal, please make sure you have followed the instructions, ensuring a Blind Review.
+  utter_antiplagiarism_policy:
+  - text: 'Mediterranean Botany guarantees the originality of all of the submitted manuscripts trough the use of anti-plagiarism software (Turnitin) provided by Ediciones Complutense. This policy ensures that the appropriate originality standards, as well as the detection of coincidences and similarities between texts sent for publication and those published previously in other sources. In the event of plagiarism your manuscript will be rejected. '
+  utter_revision_process:
+  - text: Two appropriate referees are selected by the Associate Editor to review the manuscript. The process is anonymous and double-blind. Neither the reviewers know the identity of the authors, nor do the authors know the identity of the reviewers. The final decision to accept or decline a manuscript is on the Editorial Board.
+  utter_metrics_mbot:
+  - text: The current Impact Factor (JCR 2020) is 0.842. If you want to know more about the journal metrics, please check the following webpage https://revistas.ucm.es/index.php/MBOT/indexing. 
+  utter_are_you_an_author:
+  - text: Are you an author?
+  utter_are_you_a_reader:
+  - text: Are you a reader?
+  utter_ask_register_authors:
+  - text: Authors are required to sign up in order to be able to submit their manuscripts. You can register on https://revistas.ucm.es/index.php/MBOT/user/register.
+  utter_ask_register_reader:
+  - text: "Readers are not required to register, although we do recommend that you sign up. By signing up, you will be able to receive the Table of Contents of each new issue once after it is published. This will also support our journal and increase the number of readers. You can register on https://revistas.ucm.es/index.php/MBOT/user/register. To review the journal's section Privacy Statement you can click the following link: https://revistas.ucm.es/index.php/mbot/about/privacy, which guarantees that all data from readers will not be used for other purpose."  
+  utter_how_long_until_publish:
+  - text: |-
+      If your paper has been accepted it should be a few months before it's published. 
+      To ask our team a question about the status of your article, please send us a mail on mbot@ucm.es. 
+
+      According to our webpage's stats, it takes 74 days on average between acceptance and publication, but it can depend on many factors and sometimes it takes more time.
+
+      Due to current Covid-19 pandemic crisis the journal's workflow has been affected and the publication is a bit slower than usual.
+      You can read more Editorial Statistics here: https://revistas.ucm.es/index.php/mbot/editorialstatistics.
+  utter_speak_to_a_person:
+  - text: Would you like to get in touch with the journal?
+  utter_contact:
+  - text: Please send us an email on mbot@ucm.es and we'll get back to you as soon as possible.
+  utter_assigned_as_editor:
+  - text: |- 
+      If you have gotten an email that you have been assigned as an editor to a paper, you should follow these simple steps. 
+      
+      First, you have to sign in into the journal's page https://revistas.ucm.es/index.php/MBOT/login.
+      
+      Once inside Open Journal Systems, you can observe a circle at the top of the page that reads TASKS, this button indicates the number of notification received. 
+      
+      In a menu on the left side you can find the jobs to be edited in QUEUE, you can view your own and other editors' active papers in ACTIVE and the rejected or published papers in ARCHIVES. In QUEUE, open the first paper that appears by clicking on the title and you will enter the SUBMISSION tab and here you can see the files that the author has uploaded. 
+      
+      You can then review them in your word processor and make a decision as to whether the work should go through the editorial process or be rejected.  If you decide to proceed you must ensure that the copy of the paper is 'blind' i.e., without the names of the authors. Once you have the blind version upload it to the site by clicking UPLOAD. 
+      
+      After you have uploaded the blind paper you need to click on the 'send to review' tab, choose the files to review and you will enter the REVIEW tab. Below you should find a reviewers box and a button that reads ADD REVIEWERS. You will enter a new window where you will see a list of reviewers.  
+      
+      Once the reviewer is selected, a new window appears to send an e-mail, with the abstract and the files to be reviewed, in which you can select whether to send them all or not, click on ADD REVIEWER and you will see how a notification is automatically sent and your name will appear in the reviewers box. 
+      
+      You should be able to see a green box at the top right of the screen indicating that the reviewer has been selected and another that he/she has been notified. 
+      
+      Two reviewers are sufficient for the review process, but you must be vigilant that they do their job. You must ensure to do this for every paper that has been assigned to you.  
+  utter_editor_send_to_review:
+  - text: |- 
+      After you have sent a paper to review, the reviewer should accept or reject the paper as soon as possible, but it doesn't always happen. 
+      
+      If in a week there is no notification you should send them a reminder. A button that says SEND REMINDER should be visible in Open Journal Systems.
+      
+      After the reviewers send you the review you have to read it. Next to the reviewer's name you will see a blue triangle that takes you to a small drop-down where you can see the REVIEW DETAILS in a new window. At the bottom of the window you will see a star rating where you can rate the review. 
+     
+      Finally, you accept the review and once you have done this on the screen, on the right of the reviewer's name you will see the THANK REVIEWER button to thank the reviewers for their work.
+      
+      After this you have to and make the decision and send it to the author. There are three buttons: ACCEPT, DECLINE, REVISIONS REQUIRED. The last one is the most used and even if the revision is only minor, it is convenient to ask for it. 
+      
+      When you click on the decision a window appears where the editor can use any of these three formulas or another one such as 'minor revision', major revision' or even 'resubmit'. Regarding the Resubmit button, we do not recommend it because it increases the workflow of the editorial office. The best thing to do in this case is to initiate a NEW REVIEW ROUND.
+      
+      Remember that your work is not finished until the 'ACCEPT' or 'DECLINE' is given to the author. First, it is necessary to check if the final version of the paper is adequate or not. If it is, the acceptance is given and the work automatically goes to COPYEDITING and, from there, the editorial office intervenes, and in the second case the work goes to ARCHIVES.
+  utter_ask_copyrights:
+  - text: "We publish articles under Creative Commons, more specifically under the CC-BY license. Read more about this licence on: https://creativecommons.org/licenses/by/4.0/. Users are allowed to read, download, copy, distribute, print, search, or link to the full texts of the articles, or use them for any other lawful purpose, without asking prior permission from the publisher or the author, in accordance with the BOAI definition of open access."
+    image: https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png
+  utter_thankyou:
+  - text: I am glad I was able to help you. 
+  - text: I am happy to help.
+  - text: Always happy to help.
+  - text: You're welcome.
+  - text: Anytime. 
+  - text: No problem. 
+  utter_out_of_scope:
+  - text: Sorry I can't help you with that.
+  - text: I'm afraid that I can't help you with that.
+  utter_whatdouwant_todo_next:
+  - text: What do you want to do next?
+  - text: What do you want to do now?
+  utter_whatcanido:
+  - text: What can I do for you today? 
+  utter_what_else:
+  - text: Is there something else you'd like to ask me?
+  - text: What else can I do for you? 
+  - text: Do you have another question? 
+  utter_ask_me: 
+  - text: Ask me. 
+  utter_address:
+  - text: |-
+      Our address is:
+      Pharmacology, Pharmacognosy and Botany Department
+      Faculty of Pharmacy UCM
+      Avda Complutense s/n
+      Ciudad Universitaria
+      28040 Madrid
+      Spain
+      https://goo.gl/maps/twvQfy33vVQB6To18
+  utter_email:
+  - text: You can send us an email at mbot@ucm.es.
+  - text: Our email is mbot@ucm.es.
+  utter_phone:
+  - text: We'd prefer that you send us an email on mbot@ucm.es and we'll reply as soon as possible. 
+  utter_blind_review:
+  - text: The "double-blind" review process is called double-blind because during the revision process, neither the reviewers know the identity of the author(s), nor the authors know the identity of the reviewers.
+  utter_whatisthat:
+  - text: What are you referring to? Please ask me again and be more specific about your question.
+  utter_not_help:
+  - text: I am sorry I wasn't able to help you but I am still learning. Can you repeat your question?
+  utter_botname:
+  - text: My name is MBot, and I am a chatbot. 
+  utter_assistant_language:
+  - text: For the present moment I am only available in English and I do not speak any other languages. Please make your consultations in English. 
+  utter_nice2meet:
+  - text: Nice to meet you too.
+  - text: It's nice to meet you too.   
+  - text: Likewise. 
+  utter_latest_articles:
+  - text: "📰 You can find our latest articles here: https://revistas.ucm.es/index.php/MBOT."
+  utter_help:
+  - text: |-
+      Users can ask me the following questions:
+      ▫️ Our email
+      ▫️ Our address
+      ▫️ Our Social Media
+      ▫️ About the journal Mediterranean Botany
+      ▫️ Where to read our latest articles
+      ▫️ The journal’s cost
+      ▫️ The languages this chatbot is currently available in
+      ▫️ The list of reviewers
+      ▫️ About our Editorial Team
+      ▫️ Our anti-plagiarism policy
+      ▫️ About the registration
+      ▫️ How to submit an article
+      ▫️ The Authors’ Guidelines
+      ▫️ If you can suggest the reviewers for your manuscript
+      ▫️ About the Orcid ID
+      ▫️ About the Submission Preparation Checklist
+      ▫️ Average time for publication 
+      ▫️ The language the manuscripts need to be written in
+      ▫️ About language support
+      ▫️ The journal's geographic scope
+      ▫️ Our impact factor (the journal’s metrics)
+      ▫️ The license we publish our articles under (Open-Access Policy)
+      ▫️ What kinds of articles we publish (Articles of interest)
+      ▫️ How do editors have to proceed when they’ve been assigned a paper for editing
+      ▫️ What do the editors have to do after they’ve sent the article for review
+      ▫️ About the review process
+      ▫️ About the double-blind review   
+  utter_mbot:
+  - text: Mediterranean Botany is a peer-reviewed journal focused on plant sciences in the Mediterranean biomes. The journal is published by the University Complutense of Madrid with the support of an international editorial board. Read more on https://revistas.ucm.es/index.php/MBOT/about.
+    image: https://revistas.ucm.es/public/journals/101/cover_issue_3689_en_US.jpg
+  utter_ask_survey:
+  - text: Before you go, would you like to answer a quick survey providing your feedback about your experience chatting with me? It won't take you longer than 5 minutes and it will help us improve in the future. 
+  utter_survey:
+  - text: |-
+      Thanks, you can give your feedback filling out this Form: https://docs.google.com/forms/d/e/1FAIpQLScjOW8j2MsePLWvWSyy_fVk5ex6y3mXnfaQaLzUeq2zxoLRoQ/viewform. 
+      
+      I hope we can talk again soon.
+  utter_list_reviewers:
+  - text: "You can see the full list of people that have been working as reviewers for our past issues here: https://revistas.ucm.es/index.php/MBOT/reviewers" 
+  utter_editorial_team:
+  - text: "You can see the list of our Editorial Team and Editorial Board following this link: https://revistas.ucm.es/index.php/MBOT/about/editorialTeam"
+  utter_geo_scope:
+  - text: "The journal's geographic scope is focused on the Mediterranean biomes around the world. Research on other bioclimatic regions or biomes is only accepted when addressing questions with interest to the geographic scope of the journal (e.g. evolutionary lineages related to current plant diversity in Mediterranean biomes) or in the context of special issues focused on wide topics of plant sciences"
+    image: https://revistas.ucm.es/public/journals/101/homepageImage_en_US.jpg
+actions:  
+- utter_antiplagiarism_policy
+- utter_are_you_a_reader
+- utter_ask_copyrights
+- utter_ask_register_reader
+- utter_assigned_as_editor
+- utter_contact
+- utter_editor_send_to_review
+- utter_goodbye
+- utter_greet
+- utter_how_long_until_publish
+- utter_iamabot
+- utter_metrics_mbot
+- utter_out_of_scope
+- utter_revision_process
+- utter_social_media
+- utter_speak_to_a_person
+- utter_address
+- utter_phone
+- utter_email
+- utter_blind_review
+- utter_whatisthat
+- utter_not_help
+- utter_ask_me
+- utter_what_else
+- utter_botname
+- utter_assistant_language
+- utter_nice2meet
+- utter_whatcanido
+- utter_latest_articles
+- utter_mbot
+- utter_ask_survey
+- utter_survey
+- utter_help
+- utter_editors
+- utter_authors
+- utter_readers
+- utter_suggestreview
+- utter_list_reviewers
+- utter_editorial_team
+- utter_geo_scope
