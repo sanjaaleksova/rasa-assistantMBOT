@@ -6,7 +6,7 @@ Directors: Sofía Hernansanz Ruiz, Manuel Márquez Cruz
 
 List of dependencies (Ubuntu):
 
-Package                 Version     
+ 
 ----------------------- ------------
 absl-py                 0.13.0      
 aio-pika                6.8.0       
