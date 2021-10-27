@@ -1,4 +1,4 @@
-Repository of the chatbot I have built as a part of my final master thesis (in Spanish): "Propuesta de diseño de un asistente conversacional para las necesidades de una revista científica" (in English): "Design proposal of a conversational assistant for the needs of a cientific journal". Complutense University of Madrid, course 20/21. 
+Repository for the chatbot I have built as a part of my final master thesis (in Spanish): "Propuesta de diseño de un asistente conversacional para las necesidades de una revista científica" (in English): "Design proposal of a conversational assistant for the needs of a cientific journal". Complutense University of Madrid, course 20/21. 
 
 Author: Sanja Aleksova
 
